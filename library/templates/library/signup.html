@@ -1,0 +1,29 @@
+{% extends 'library/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <h1 class="text-center fw-bold mb-4 border bg-primary p-3">Signup Form</h1>
+    <div class="row flex d-flex justify-content-center">
+        <div class="col-lg-10 offset-1 flex d-flex justify-content-center ">
+            <form action="" method="post" style="width: 500px; " novalidate >
+                {% csrf_token %}
+             {% for form in fm %}
+                {{form.label}}{{form}} {{forms.errors}}<br> 
+             {% endfor %}
+
+             {% for error in fm.non_field_errors %}
+                {{error}}
+
+             {% endfor %}
+
+             <div class="text-center mb-5">
+                <input type="submit" name="" id="" class="btn btn-primary " > <br> <br>
+                <a href="{% url 'login' %}">Login here</a>
+             </div>
+                
+            </form>
+        </div>
+    </div>
+   
+{% endblock content %}

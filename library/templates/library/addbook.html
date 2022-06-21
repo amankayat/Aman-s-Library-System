@@ -1,0 +1,38 @@
+{% extends 'library/base.html' %}
+{% load static %}
+
+{% block messages %}
+
+{% for message in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+  {% endfor %}
+{% endblock messages %}
+
+
+
+
+{% block content %}
+
+<h1 class="text-center fw-bold mb-4 border  p-3 bg-warning"> Add Book </h1>
+
+<div class="flex d-flex justify-content-center">
+    <form action="" method="post" style="width: 600px;">
+    {% csrf_token %}
+
+    {% for form in fm %}
+        {{form.label}}{{form}} {{form.errors}}<br>
+    {% endfor %}
+
+    {% for error in non_field_errors %}
+        {{errors}}
+        {% endfor %}
+        <div class="text-center">
+            <input type="submit" name="" id="" class="btn btn-warning">
+        </div>
+    </form>
+</div>
+{% endblock content %}

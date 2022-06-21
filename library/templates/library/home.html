@@ -1,0 +1,17 @@
+{% extends 'library/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div>
+        <img src="{% static 'images/bg.jpg' %}" alt="" style="width: 1350px; height:570px;">
+        <div class=" card bg-dark carousel-caption  "  style="bottom:12em;">
+            <h2 class="text-light fw-bold "  >Libraries were full of ideas-perhaps the most dangerous and powerfull of all weapons.</h2>
+            <div>
+                <a href="{% url 'signup' %}" class="btn btn-outline-primary m-2">Signup</a>
+                <a href="{% url 'login' %}" class="btn btn-outline-warning m-2">Login</a>
+            </div>
+            <a href="{% url 'guests' %}" class="text-light">As a Guest</a>
+           
+        </div>
+    </div>
+{% endblock content %}

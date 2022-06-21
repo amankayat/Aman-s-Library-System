@@ -1,0 +1,27 @@
+{% extends 'library/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<h1 class="text-center fw-bold mb-4 border  p-3 bg-warning">Update Book Here</h1>
+
+<div class="flex d-flex justify-content-center">
+    <form action="" method="POST" style="width: 500px;">
+        {% csrf_token %}
+        {% for form in fm %}
+
+        {{form.label}}{{form}} {{form.errors}} <br>
+        {% endfor %}
+
+        {% for error in fm.non_field_errors %}
+        {{error}}
+        {% endfor %}
+
+        <div class="text-center">
+            <input type="submit" name="" id="" class="btn btn-warning">
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

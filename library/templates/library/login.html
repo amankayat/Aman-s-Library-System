@@ -1,0 +1,39 @@
+{% extends 'library/base.html' %}
+{% load static %}
+
+{% block messages %}
+
+{% for message in messages %}
+<div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+    <strong >{{message}}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+  {% endfor %}
+{% endblock messages %}
+
+
+{% block content %}
+
+<h1 class="text-center fw-bold mb-4 border  p-3 bg-warning">Login Form</h1>
+
+<div class="flex d-flex justify-content-center">
+    
+<form action="" method="post" style = "width:400px ;">
+    {% csrf_token %}
+    
+    {% for form in fm %}
+    {{form.label}}{{form}}{{errors}} <br> <br>
+    {% endfor %}
+
+    <div class = "text-center">
+        <input type="submit" name="" id="" class = "btn btn-warning "> <br> <br>
+        <a href="{% url 'signup' %}">signup here</a>
+    </div>
+    
+    
+</form>
+</div>
+
+
+{% endblock content %}
